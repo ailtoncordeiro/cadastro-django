@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+<title>Listar Pessoas Cadastradas</title>
+{% endblock %}
+
+{% block conteudo %}
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>CPF</th>
+            </tr>
+            {% for pessoa in pessoas %}
+            <tr>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.email}}</td>
+                <td>{{pessoa.cpf}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

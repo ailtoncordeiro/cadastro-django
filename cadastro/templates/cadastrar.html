@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+<title>Cadastro de Pessoas</title>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container">
+    <div class="row">
+        <h4 class="text-center" style="margin-top: 20px;">Formulário de Cadastro</h4>
+    </div>
+    <!-- Início do formulário -->
+    <div class="justify-content-md-center">
+        <form method="post">
+            {% csrf_token %}
+            <div class="col-8">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome">
+            </div>
+            <div class="col-8">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+            <div class="col-8">
+                <label class="form-label">CPF</label>
+                <input type="text" class="form-control" name="cpf">
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Salvar</button>
+            </div>
+        </form>
+    <!-- Início do formulário -->
+    </div>
+</div>
+{% endblock %}
