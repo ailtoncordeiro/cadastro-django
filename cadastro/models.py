@@ -14,6 +14,9 @@ class Infracao(TimeStamp):
     artigo = models.CharField(max_length=255, verbose_name='Artigo')
     descricao = models.CharField(max_length=255, verbose_name='Descricao')
 
+    def __str__(self):
+        return self.descricao
+
 class Pessoa(TimeStamp):
     cpf = models.CharField(max_length=14, unique=True, verbose_name='CPF')
     nome = models.CharField(max_length=255, verbose_name='Nome')
@@ -39,4 +42,7 @@ class Foto(TimeStamp):
         on_delete=models.CASCADE,
         related_name='fotos'
     )
+
+    def __str__(self):
+        return self.pessoa.nome
 
